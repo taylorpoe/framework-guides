@@ -1,15 +1,13 @@
-## Welcome to the Famous Engine prose guides repo! 
+## Welcome to the Famous Framework prose guides repo! 
 
-We've exposed this content so that you can help us provide more accurate and comprehensive learning resources. This repo contains all of the raw Markdown content for the [famous.org/learn](https://famous.org/learn) section of the website.
+We've exposed this content so that you can help us provide more accurate and comprehensive learning resources. This repo contains all of the raw Markdown content for the [famous.org/framework](https://famous.org/framework) section of the website.
 
 While this repo does not expose any of the website's markup, feel free to file issues here about broken links or inconsistencies with the famous.org website in general. The main goal here is to provide a better and improved learning experience for the community. 
 
- Note that Tutorials are broken into thier own folders, while the prose guides are located in the root directory of this repo. For the Famous Framework prose guides check out the repo here: [github.com/Famous/framework-guides](https://github.com/Famous/framework-guides)
+ Note that Tutorials are broken into thier own folders, while the prose guides are located in the root directory of this repo. For the Famous Engine prose guides check out the repo here: [github.com/Famous/engine-guides](https://github.com/Famous/engine-guides)
 
 
 ## Style tips 
-
-(borrowed from MDN & jQuery documentation)
 
 _The following norms should be followed for new code and existing code that needs cleanup. Note that these are only guidelines so there always may always be exceptions to the rules._
 
