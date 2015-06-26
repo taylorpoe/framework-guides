@@ -2,13 +2,15 @@
 
 **For the Famous Engine prose guides check out the repo here: [github.com/Famous/engine-guides](https://github.com/Famous/engine-guides)**
 
-We've exposed this content so that you can help us provide more accurate and refined learning resources. This repo contains all of the raw Markdown content for the [famous.org/framework](https://famous.org/framework) section of the website. Note that Tutorials are broken into thier own folders and the prose guides/API docs are located in the root directory of this repo. Click here to view the table of contents. 
+We've exposed this content so that you can help us provide more accurate and refined learning resources. This repo contains all of the raw Markdown content for the [famous.org/framework](https://famous.org/framework) section of the website. Note that Tutorials are broken into thier own folders and the prose guides/API docs are located in the root directory of this repo. 
+
+[Click here to view the table of contents](/#Table of contents) 
 
 _While this repo does not expose any of the website's markup, feel free to file issues here about broken links or inconsistencies with the famous.org website in general._ 
 
 ## Style tips intro
 
-In addition to typos and grammatical errors, we encourage the community to let us know if any section is unclear or needs an update, but please leave a detailed comment when filling issues about content. 
+In addition to typos and grammatical errors, we encourage the community to let us know if any section is unclear or needs an update, but please leave detailed comments when filling issues about content. 
 
 The following guidelines should be followed for new code and existing code that needs cleanup. Note that these are only guidelines and there may be some exceptions to the rules.
 
