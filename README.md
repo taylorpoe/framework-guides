@@ -1,9 +1,10 @@
 ## Welcome to the [Famous Framework](Famous.org/framework) prose guides repo! 
 
-**For the Famous Engine prose guides check out the repo here: [github.com/Famous/engine-guides](https://github.com/Famous/engine-guides)**
+**For the [Famous Engine](famous.org/learn) prose guides check out the repo here: [github.com/Famous/engine-guides](https://github.com/Famous/engine-guides)**
 
-We've exposed this content so that you can help us provide more accurate and refined learning resources. This repo contains all of the raw Markdown content for the [famous.org/framework](https://famous.org/framework) section of the website. Note that Tutorials are broken into thier own folders and the prose guides/API docs are located in the root directory of this repo. 
+We've exposed this content so that you can help us provide more accurate and refined learning resources. This repo contains all of the raw Markdown content for the [famous.org/framework](https://famous.org/framework) section of the website. Note that Tutorials are broken into their own folders and the prose guides/API docs are located in the root directory of this repo. 
 
+[Click here for the table of contents](#TOC)
 
 _While this repo does not expose any of the website's markup, feel free to file issues here about broken links or inconsistencies with the famous.org website in general._ 
 
@@ -26,7 +27,7 @@ Note that there is only one title per page. The convention above should be used 
 
 ## Subheadings
 
-In your md files, use two pound signs with a single space for subheadings. Only the first letter is caplitalized (sentence case).
+In your md files, use two pound signs with a single space for subheadings. Only the first letter is capitalized (sentence case).
 
      ## Your heading
 
@@ -110,7 +111,7 @@ We use the following format:
 
 ---------------------------------
 
-<span id="TOC">## Table of contents</span>
+<span id="TOC"><h2> Table of contents</h2></span>
 
 ### Overview
 
