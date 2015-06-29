@@ -25,6 +25,7 @@
 - [Timelines](timelines.md)
 
 -------------------------------------
+<!-- _config.yml TOC
 
 navigation:
   -
@@ -253,3 +254,4 @@ lessons:
       -
         name: Finish
         path: finish
+-->
