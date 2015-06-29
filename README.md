@@ -1,10 +1,10 @@
-## Welcome to the [Famous Framework](Famous.org/framework) prose guides repo! 
+## Welcome to the [Famous Framework](https://famous.org/framework) prose guides repo! 
 
-**For the [Famous Engine](famous.org/learn) prose guides check out the repo here: [github.com/Famous/engine-guides](https://github.com/Famous/engine-guides)**
+**For the [Famous Engine](https://famous.org/learn) prose guides check out the repo here: [https://github.com/Famous/engine-guides](https://github.com/Famous/engine-guides)**
 
 We've exposed this content so that you can help us provide more accurate and refined learning resources. This repo contains all of the raw Markdown content for the [famous.org/framework](https://famous.org/framework) section of the website. Note that Tutorials are broken into their own folders and the prose guides/API docs are located in the root directory of this repo. 
 
-[Click here for the table of contents](#TOC)
+[Click here for the table of contents](./TOC.md)
 
 _While this repo does not expose any of the website's markup, feel free to file issues here about broken links or inconsistencies with the famous.org website in general._ 
 
@@ -109,32 +109,7 @@ We use the following format:
     [Up next: Your next section name &raquo;](./Yournextsectionname.html) 
     </span>
 
----------------------------------
 
-<span id="TOC"><h2> Table of contents</h2></span>
-
-### Overview
-
-- [Hello Framework](hello-framework.md)
-- [Getting Started](getting-started.md)
-- [Core Concepts](core-concepts.md)
-
-### Essentials
-
-- [Behaviors](behaviors.md)
-- [Events](events.md)
-- [States](states.md)
-- [Tree](tree.md)
-- [Layout](layout.md)
-- [Control Flow](control-flow.md)
-
-### Intermediate
-
-- [Deployment / publishing](deployment.md)
-- [Includes](includes.md)
-- [Imports](imports.md)
-- [Static Assets](static-assets.md)
-- [Timelines](timelines.md)
 
 ## Help &amp; troubleshooting
 
