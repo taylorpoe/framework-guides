@@ -16,7 +16,7 @@ To use static assets (such as images) with your component, simply include them a
 Then, within your `hello-famous.js` entrypoint file, you can refer to that asset using special syntax for asset interpolation, `{{BASE_URL}}`:
 
     FamousFramework.component('jane-doe:hello-famous', {
-        tree:`<node id="one-b">
+        tree:`<node id="imageNode">
             <img src="{{BASE_URL}}my-image.png">
         </node>`
     });
