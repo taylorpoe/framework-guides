@@ -9,7 +9,7 @@ The [Famous Framework](https://github.com/Famous/framework) provides a structure
 
 All Famous Framework projects begin with the following syntax:
  
-    FamousFramework.component('module-name',  { /* module defintion /* });
+    FamousFramework.component('module-name',  { /* module definition /* });
 
 The bulk of a project lives within the _module definition_, where we list our behaviors, events, states, and tree as members of an object (see [Core Concepts](core-concepts.html) for an intro to the BEST architectural pattern).
 
