@@ -36,9 +36,9 @@ The `$if` control-flow behavior is a special behavior that will add/remove selec
 The `$repeat` control-flow behavior will repeat the selected components a certain number of times, where the number of times reflects the `.length` of the array returned from the function. For example, the following example repeats a `node` three times:
 
        FamousFramework.component('jane-doe:repeat', {
-            tree: `<node id="el"></node>`,
+            tree: `<node class="el"></node>`,
             behaviors: {
-                '#el': {
+                '.el': {
                     '$repeat': function() {
                         return [
                             {position:[0,0],content:'Hello'},
@@ -55,12 +55,12 @@ If objects are given as the array elements returned by the `$repeat` behavior, t
 Injecting `$index` into any behavior function allows you to access the index of an item in the `$repeat` array. Additionally, the `$index` parameter notifies the framework to call that behavior function for each item in the `$repeat` array. 
 
      FamousFramework.component('jane-doe:repeat', {
-            tree: `<node id="el"></node>`,
+            tree: `<node class="el"></node>`,
             states: {
                 colors: ['red', 'yellow', 'blue', 'green']
             }
             behaviors: {
-                '#el': {
+                '.el': {
                     '$repeat': function(colors) {
                         return colors;
                     },
