@@ -80,8 +80,8 @@ HTML content can be added to the tree and interpreted. However, it must be wrapp
           },
           events: {
             '#bar': { // this will work on input
-                'change': function($payload){
-                    console.log($payload)
+                'input': function($event){
+                    console.log($event)
                 }
             }
           },
@@ -102,12 +102,12 @@ We can also set HTML content through the `content` behavior. Note when adding el
       },
       events: {
         '#foo': { // this will work on input
-            'change': function($payload){
-                console.log($payload)
+            'input': function($event){
+                console.log($event)
             },
         }
         '#bar': {
-            'change': function($payload){
+            'input': function($event){
                 console.log('this will never run')
             }
         }
