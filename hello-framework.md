@@ -55,10 +55,17 @@ Note how we use CSS selectors (`#background`, `#text`) to target behaviors to el
 
 While the _tree_ sets up the structure of our app, the _behaviors_ tell the module how each element should be displayed. The result: a 'Hello Framework!' message centered and styled in front of a CSS gradient background.
 
-## Rendering the component
+## Deploying your component
 
-It's important to note that the _tree_ declaration above isn't really HTML, but just a representation of the app's structure (the scene graph). In order to render the project, the component needs to be deployed to an HTML document. 
+Deploying a project is as easy as running the following command from the terminal:
 
-    FamousFramework.deploy('my-name:hello-world', 'HEAD', 'body');
+  famous deploy
 
-You'll find code similar to the line above in the `public/index.html` of the project you created when you ran `famous framework-scaffold`. That line tells the framework library how to locate the component code (served on `localhost:1618`) and where to render it on the page.
+Calling this from the project directory will push your project up to the Famous cloud and return the following lines of code:
+    
+    Share: https://api-beta.famo.us/codemanager/v1/containers/the-unique-id-of-your-project/share
+    Embed:
+    <script src="https://assets-beta.famo.us/embed/embed.js"></script>
+    <div class="famous-container" data-famous-container-identifier="the-unique-id-of-your-project"></div>
+
+Visit the share link to view your hosted project live on the web or use the embed tags to include your project in an existing website. Note that you will need to size the `<div>` using CSS in order for your project to be visible.  
