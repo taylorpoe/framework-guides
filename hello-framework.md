@@ -59,7 +59,7 @@ While the _tree_ sets up the structure of our app, the _behaviors_ tell the modu
 
 Deploying a project is as easy as running the following command from the terminal:
 
-  famous deploy
+    famous deploy
 
 Calling this from the project directory will push your project up to the Famous cloud and return the following lines of code:
     
