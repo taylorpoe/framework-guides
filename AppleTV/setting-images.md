@@ -53,7 +53,7 @@ _Note that this is just a pretend API. If we were working with a real API we wou
 
 ## Importing external files
 
-To import the `galleryData.js` file into our component, we will use the Framework component's `.config()` method. This method preloads any JavaScript or CSS files passed to it in the `includes` array.
+To import the `galleryData.js` and `apple-tv.css` files into our component, we will use the Framework component's `.config()` method. This method preloads any JavaScript or CSS files passed to it in the `includes` array.
 
     FamousFramework.scene('module name', {
     
@@ -61,11 +61,12 @@ To import the `galleryData.js` file into our component, we will use the Framewor
        
      }).config({
          includes: [
-             'galleryData.js'
+             'galleryData.js',
+             'apple-tv.css'
          ]
     });
 
-Note the syntax above. The `galleryData.js` file is loaded before our component, so the `imageData` array is now accessible to our application. 
+Note the syntax above. The `galleryData.js` and `apple-tv.css` files are loaded before our component, so the `imageData` array is now accessible to our application and the CSS styles are applied.
 
 Within your state object replace the empty `srcs` array with a reference to image data:
 
