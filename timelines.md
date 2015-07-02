@@ -79,7 +79,7 @@ Note how we pass the `$timeline.start()` method an object with a duration in mil
   
 ## Animating multiple behaviors
 
-We can define multiple timelines, each with multiple selectors and behaviors that can be modified.
+We can define multiple timelines, each with multiple selectors and behaviors. Below is a slightly more complex example with 2 animations. 
 
         .timelines({
             'animation1': {
@@ -115,11 +115,11 @@ We can define multiple timelines, each with multiple selectors and behaviors tha
             }
         });
 
-Timelines can be targeted individually using `$timelines.get()`, or added to a queue.
+These timelines can be targeted individually using `$timelines.get()`, or added to a timeline queue.
 
 ## Creating an animation queue
 
-The $timelines object can queue muliple animations using the `.queue()` method.
+The `$timelines` object can queue muliple animations using the `.queue()` method.
 
     $timelines.queue([
         [ 'animation1', { duration: 2000 }],
@@ -130,7 +130,7 @@ The `.queue()` method accepts multiple animations passed in as an array of array
 
 ## Callbacks
 
-The `$timelines.queue()` can also be used to trigger callback functions. 
+The `$timelines.queue()` method can also be used to trigger callback functions at the end of animations. 
 
     events: {
         '#foo': {
@@ -146,4 +146,4 @@ The `$timelines.queue()` can also be used to trigger callback functions.
         }
     }
 
-Add a callback as the third item in an array passed to the `.queue()` method. After the animation in the same array is complete, the callback will fire. 
+Add a callback as the third item in the timeline selector array passed to the `.queue()` method. After the animation in the array is complete, the callback will fire before calling on the next animation. 
