@@ -110,7 +110,7 @@ As mentioned previous, we specify the `'size'` behavior's values as _`true`_ in 
         tree: '<node id="foo"></node>',
         behaviors: {
            '#foo': {
-                'size-true': [true,true]
+                'size-true': [true,true],
                 'size-true-z': true
             }
         }
