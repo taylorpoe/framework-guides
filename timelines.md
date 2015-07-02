@@ -146,4 +146,4 @@ The `$timelines.queue()` method can also be used to trigger callback functions a
         }
     }
 
-Add a callback as the third item in the timeline selector array passed to the `.queue()` method. After the animation in the array is complete, the callback will fire before calling on the next animation. 
+Add a callback as the third item in the timeline selector array passed to the `.queue()` method. After the animation in the array is complete, the callback will fire before calling on the next animation. `.startQueue()` begins the entire animation sequence.
