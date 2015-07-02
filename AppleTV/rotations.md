@@ -200,7 +200,8 @@ When you are finished your full component code should look like the code below:
             tree: 'apple-tv.html'  
     }).config({
          includes: [
-             'galleryData.js'
+             'galleryData.js',
+             'apple-tv.css'
          ]
     });
         
