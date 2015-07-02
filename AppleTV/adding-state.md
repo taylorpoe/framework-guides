@@ -62,9 +62,20 @@ Replace your behaviors in `apple-tv.js` with the object below and read through t
 	        }
 	    } 
 
-Above, you will notice that we removed the background-color on `#root`. If you wish to keep the grey background, navigate to `apple-tv-lesson/public/`directory and add it to the CSS in the project's `index.html` file. Set it within the `html, body` CSS declaration. 
 
-If you save the changes, you should see the new rotated scene. Let's walk through how the code above affects the output on the screen.
+If you save the changes, you should see the new rotated scene. 
+
+## Adding external CSS
+
+You'll notice that we removed the CSS background color of the `#root` node above. If you wish to keep a grey background, open up the `apple-tv.css` file you created in the [getting started step](http://famous.org/framework/AppleTV/getting-started.html) and paste in the following CSS:
+ 
+    body {
+      background:grey;
+    }
+
+We needed to remove the background color from `#root` because we are rotating everything backwards and into the plane of the `#root` node. If we kept the background color on `#root`, half of the `#rotator` would be hidden by a solid grey plane. 
+
+As a general rule, it's always a best practice to keep your styles contained within external CSS. However, in this lesson we add inline styles for convenience. Later, we will show you how to import this CSS file when we import our images. 
 
 ## Understanding the rotation
 
@@ -73,8 +84,6 @@ Famous gives us access to a 3D coordinate system: X axis goes left to right, Y u
 ![rotation](rotation.png)
 
 In our gallery, we want to rotate our images as if they were dangling from a ceiling fan. In order to achieve this, we will rotate the main  `#rotator-node`  backwards on its X axis by 90 degrees ( -&pi;/2 in radians) and then use the Z axis to spin all of the `.gallery-item` images. Additionally, we need to rotate each `.gallery-item` forwards by 90 degrees in order for our images to be visible. 
-
-We needed to remove the background color from `#root` because we are rotating everything backwards and into the plane of the `#root` node. If we kept the background color on `#root`, half of the `#rotator` would be hidden by a solid grey plane.
 
 _Note: Since DOM elements are flat, they become invisible when they are rotated perpendicular to the screen. Note how we didn't quite rotate our `#rotator-node` node above by a full 90 degrees ( only -&pi;/2.1 or 85.7 degrees) just yet so it would be visible in this example._ 
 
