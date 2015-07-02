@@ -26,6 +26,8 @@ To create a new timeline, use the `.timelines()` method that can be chained to t
 
 Above, the `'animation1'` timeline targets the `#foo` node, which it will animate by accessing `#foo`'s behavior functions. The `.timelines()` method can accept multiple timelines, each with any number of selectors and behavior animations contained within objects. 
 
+Since timelines create "tween" animations between the values provided, only behaviors that take numerical values can be used. In other words, behaviors such as `'content'` or `'style'` cannot be used in a timeline.
+
   
 ## Animating a behavior
 
@@ -62,7 +64,7 @@ Starting at rotation of zero, we rotate `#foo`'s `'rotation-z'` behavior PI * 2 
 
 ## Adding an event
 
-Now that the simple animation is set up above, we need a way to trigger it. We will do this by adding a click event to `#foo` and injecting the `$timelines` object. This object exposes a `.get()` method for locating an animation and a `.start()` method for triggering it.
+Once a timeline is defined, event functions can access it by dependency injecting the `$timelines` object. This object exposes a `.get()` method for locating an animation and a `.start()` method for triggering it.
 
     events: {
         '#foo': {
@@ -73,33 +75,11 @@ Now that the simple animation is set up above, we need a way to trigger it. We w
     }
 
 Note how we pass the `$timeline.start()` method an object with a duration in milliseconds. This duration will be used to trigger the behavior changes assigned to percentage values in the timeline. So, at 1 second in or halfway through the animation (50% of 2000ms), the `#foo` node will finish rotating in a complete circle.   
-
-## Adjusting the axis of rotation
-
-At this point, the animation rotates from the upper left corner of `#foo`. The axis of rotation is defined by a node's <em>origin</em> property. Let's set the rotation point to the center of the `#foo` and also move the `#foo` to the center of the screen using the <em>align</em> property.
-
-    '#foo': {
-        'content': '<h1>Timeline Example</h1>',
-        'size': [200, 200],
-        'style': {
-            'background-color': 'red'
-        },
-        'origin': [0.5, 0.5],
-        'align': [0.5, 0.5]
-    }
-
-## Creating an animation queue
-
-Now that we have our first animation set up, let's take a look at how to queue up multiple animations. 
-
-    $timelines.queue([
-        [ 'animation1', { duration: 2000 }],
-        [ 'animation2', { duration: 2000 }]
-    ]).startQueue();
-
-As you can see, instead of using `$timelines.get()` to get a single animation we are using `$timelines.queue()` to add multiple animations to a queue. In this way, we can play multiple animations one after another. Let's add this second animation to our timeline.
+ 
   
 ## Animating multiple behaviors
+
+We can define multiple timelines, each with multiple selectors and behaviors that can be modified.
 
         .timelines({
             'animation1': {
@@ -108,9 +88,9 @@ As you can see, instead of using `$timelines.get()` to get a single animation we
             'animation2': {
                 '#foo': {
                     'scale': {
-                        '0%':   { value: [1,1], curve: 'linear' },
-                        '50%':  { value: [0,0], curve: 'linear'},
-                        '100%':  { value: [1,1], curve: 'linear' }
+                        '0%':   { value: [1,1] },
+                        '50%':  { value: [0,0], curve: 'easeInOut'},
+                        '100%':  { value: [1,1], curve: 'inOutBounce' }
                     },
                     'position': {
                         '0%':   { value: [0, 0, 0], curve: 'linear' },
@@ -118,17 +98,39 @@ As you can see, instead of using `$timelines.get()` to get a single animation we
                         '100%':  { value: [0, 0, 0], curve: 'easeOutBounce' }
                     },
                     'rotation-z': {
-                        '0%':   { value: 0, curve: 'linear' },
-                        '50%':  { value: Math.PI * 2, curve: 'linear'},
-                        '100%':  { value: 0, curve: 'linear' }
+                        '0%':   { value: 0 },
+                        '50%':  { value: Math.PI * 2},
+                        '100%':  { value: 0, curve: 'outBounce' }
                     }
+                },
+                '#bar':{
+                    'scale': {
+                        '0%': [0.5,0.5],
+                        '50%':[1,1]
+                    }
+
+                    // additional behaviors can go here
+                
                 }
             }
         });
 
-In this animation, we are manipulating multiple behaviors of our `#foo` node. Another feature of animations that can be very useful is the use of <em>callbacks</em>. These can be added to the end of an animations queue.
+Timelines can be targeted individually using `$timelines.get()`, or added to a queue.
+
+## Creating an animation queue
+
+The $timelines object can queue muliple animations using the `.queue()` method.
+
+    $timelines.queue([
+        [ 'animation1', { duration: 2000 }],
+        [ 'animation2', { duration: 2000 }]
+    ]).startQueue();
+
+The `.queue()` method accepts multiple animations passed in as an array of arrays. 
 
 ## Callbacks
+
+The `$timelines.queue()` can also be used to trigger callback functions. 
 
     events: {
         '#foo': {
@@ -144,4 +146,4 @@ In this animation, we are manipulating multiple behaviors of our `#foo` node. An
         }
     }
 
-Using callbacks is a great way to trigger events that rely on the completion of an animation.
+Add a callback as the third item in an array passed to the `.queue()` method. After the animation in the same array is complete, the callback will fire. 
