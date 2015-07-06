@@ -55,7 +55,9 @@ _Note that this is just a pretend API. If we were working with a real API we wou
 
 To import the `galleryData.js` and `apple-tv.css` files into our component, we will use the Framework component's `.config()` method. This method preloads any JavaScript or CSS files passed to it in the `includes` array.
 
-    FamousFramework.scene('module name', {
+Call the `.config()` method on the framework component in `apple-tv.js` passing in the external files using the syntax below.
+
+    FamousFramework.component('module name', {
     
        //... behaviors, events, state, tree not shown ../
        
@@ -66,7 +68,7 @@ To import the `galleryData.js` and `apple-tv.css` files into our component, we w
          ]
     });
 
-Note the syntax above. The `galleryData.js` and `apple-tv.css` files are loaded before our component, so the `imageData` array is now accessible to our application and the CSS styles are applied.
+Note that the snippet above omits the entire file for brevity. The `galleryData.js` and `apple-tv.css` files are loaded before our component, so the `imageData` array is now accessible to our application and the CSS styles are applied.
 
 Within your state object replace the empty `srcs` array with a reference to image data:
 
@@ -156,7 +158,8 @@ Before moving on to the next step, your `apple-tv.js` file should look like the 
             tree: 'apple-tv.html'  
     }).config({
          includes: [
-             'galleryData.js'
+             'galleryData.js',
+             'apple-tv.css'
          ]
     });
 
