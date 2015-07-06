@@ -19,7 +19,7 @@ Please see the instructions in the [framework README &raquo;](https://github.com
 Once everything is installed, create three new files in the apple-tv folder named  `apple-tv.css`,`apple-tv.html` `galleryData.js`. To do this from the command line, you can type:
 
     $ cd components/my-name/apple-tv
-    $touch apple-tv.css
+    $ touch apple-tv.css
     $ touch apple-tv.html 
     $ touch galleryData.js
     $ cd ../../..
