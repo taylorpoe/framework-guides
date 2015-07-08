@@ -55,35 +55,6 @@ It's common to dependency-inject a `$state` instance along with a complementary 
 
 _For more on the `$state` object's API visit the [states section](states.html)._
 
-## Custom events
-
-To emit a custom event message, you'll need to dependency-inject a `$dispatcher` instance into your event function:
-
-    FamousFramework.component('example', {
-        events: {
-            '$public': {
-                'something': function($dispatcher) {
-                    $dispatcher.emit('hello', 'my message');
-                }
-            }
-        }
-    });
-
-Components can listen to messages emitted by any component declared in their tree.
-
-    FamousFramework.component('example', {
-        events: {
-            '#foo': {
-                // This will run any time a tree node matching '#foo'
-                // emits a message whose key is 'hello'.
-                'hello': function($payload) {
-                    // Do business logic here
-                }
-            }
-        },
-        tree: `<node id="foo"></node>`
-    });
-
 ## $lifecycle events
 
 The `$lifecycle` event group allows you to listen for special events throughout the life of a component. To access these events, provide `'$lifecycle'` as a selector to the events object instead of a selector.
@@ -105,6 +76,33 @@ Here, we set the state's `positionX` value to `250` over a 1000ms period immedia
 - `'post-load'` - Event fired after the component has loaded
 - `'pre-unload'` - Event fired right before a component will be destroyed
 
+## Custom events
+
+To broadcast a custom event message, you'll need to dependency-inject a `$dispatcher` instance into your event function:
+
+    FamousFramework.component('parent', {
+        events: {
+            '$lifecycle': {
+                'post-load': function($dispatcher) {
+                    $dispatcher.broadcast('parent-loaded', {loaded: true});
+                }
+            }
+        }
+    });
+
+Components can listen to messages emitted by any component declared in their tree.
+
+    FamousFramework.component('child', {
+        events: {
+            '#foo': {
+                'parent-loaded': function($payload) {
+                    // Do business logic here
+                }
+            }
+        },
+        tree: `<node id="foo"></node>`
+    });
+    
 ## Private vs. public events
 
 Events within the `$private` group will only be triggered by a scene's own `$self` behaviors.
