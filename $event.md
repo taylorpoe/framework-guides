@@ -46,7 +46,7 @@ FamousFramework.scene('username:foo', {
 });
 ```
 
-Example when event handler is triggered by `$dispatcher.emit`
+Example when event handler is triggered by `$dispatcher.broadcast`
 
 ```
 FamousFramework.scene('username:parent', {
@@ -68,6 +68,39 @@ FamousFramework.scene('username:child', {
             'parent-loaded' : function($event, $payload) {
                 // $event is a CustomEvent (https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)
                 // $payload --> {loaded: true}
+            }
+        }
+    }
+});
+```
+
+Example when event handler is triggered by `$dispatcher.emit`
+
+```
+FamousFramework.scene('username:parent', {
+    events: {
+        '$lifecycle' : {
+            'post-load' : function($dispatcher) {
+                $dispatcher.broadcast('parent-loaded', {loaded: true});
+            }
+        },
+        '$self': {
+          'my-event': function($payload) {
+            // $event is a CustomEvent (https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)
+            // $payload --> true
+          }
+        }
+    },
+    tree: `
+        <username:child id="child"></username:child>
+    `
+});
+
+FamousFramework.scene('username:child', {
+    events: {
+        '$self' : {
+            'parent-loaded' : function($event, $payload) {
+                $dispatcher.emit('my-event', true);
             }
         }
     }
