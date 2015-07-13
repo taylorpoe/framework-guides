@@ -24,7 +24,7 @@ Above, we target the `#foo` node and provide it with `size`, `position`, and `co
 
 ## Behavior functions
 
-Behavior functions are where the true power of behaviors shine. Think of them projections of the state. They can respond to state changes, but they can never make modifications to that state. 
+Behavior functions are where the true power of behaviors shine. Think of them as projections of the state. They can respond to state changes, but they can never make modifications to that state. 
 
 Notice how we replace the `position` behavior from above with a _behavior function_ that accesses two state values: `positionX` and `positionY`.
     
