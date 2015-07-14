@@ -27,7 +27,7 @@ When adding events to a component, organize them within objects grouped by _sele
         }
     });
 
-The event object selectors specify which event functions will be attached to the corresponding elements in the tree. Event listeners can be either be traditional DOM events ('click', 'mousedown', etc) or custom programmatic events. 
+The event object selectors specify which event functions will be attached to the corresponding elements in the tree. Event listeners can either be traditional DOM events ('click', 'mousedown', etc) or custom programmatic events. 
 
 ## Modifying the state
 
